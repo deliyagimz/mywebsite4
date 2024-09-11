@@ -5,7 +5,7 @@ pipeline {
         stage('Clone Repository') {
             steps {
                 // Checkout the Git repository
-                git 'https://github.com/yourusername/your-repo.git'
+                git 'https://github.com/deliyagimz/mywebsite4.git'
             }
         }
 
@@ -13,7 +13,7 @@ pipeline {
             steps {
                 // Build the Docker image
                 script {
-                    def app = docker.build("your-website:latest")
+                    def app = docker.build("my_website4:latest")
                 }
             }
         }
@@ -29,7 +29,7 @@ pipeline {
                         echo "No container to stop"
                     }
                     // Run the new Docker container
-                    sh "docker run -d --name website_container -p 80:80 your-website:latest"
+                    sh "docker run -d --name website_container -p 8089:80 my_website4:latest"
                 }
             }
         }
@@ -42,3 +42,4 @@ pipeline {
         }
     }
 }
+
